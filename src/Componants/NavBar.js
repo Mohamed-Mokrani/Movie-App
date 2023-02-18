@@ -1,18 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const NavBar = () => {
   const [showInput, setShowInput] = useState(false);
   const [movieSearch, setMovieSearch] = useState("");
+  const [navBarBackgroundColor, setNavBarBackgroundColor] = useState("transparent");
 
-  const OClick = () => setShowInput(true);
-  const mouseLeave = () => setMovieSearch("") + setShowInput(false);
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    setNavBarBackgroundColor(scrollPosition > 0 ? "black" : "transparent");
+  };
+
+  const handleInputClick = () => setShowInput(true);
+
+  const handleInputMouseLeave = () => {
+    setMovieSearch("");
+    setShowInput(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <div className="nav-bar">
+    <div className="nav-bar" style={{ backgroundColor: navBarBackgroundColor }}>
       <p className="logo">Movie Time</p>
 
       <div className="nav-bar-right">
-        <div className="search" onClick={OClick} onMouseLeave={mouseLeave}>
+        <div className="search" onClick={handleInputClick} onMouseLeave={handleInputMouseLeave}>
           <button className="search-button">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
