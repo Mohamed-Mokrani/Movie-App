@@ -1,6 +1,7 @@
 import "./App.css";
 import NavBar from "./Componants/NavBar";
 import Home from "./Componants/Home";
+import MoviesContainer from "./Componants/MoviesContainer";
 
 
 
@@ -10,7 +11,8 @@ function App() {
     <div className="App">
       <NavBar />
       <Home />
-      <Home />
+      <h1 className="movies-title">MOVIES</h1>
+      <MoviesContainer/>
       
     </div>
   );
