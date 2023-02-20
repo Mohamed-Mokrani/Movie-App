@@ -7,6 +7,7 @@
   50% {
     color: red;
     letter-spacing: 3px;
+    
   }
   100% {
     color: white;
@@ -64,6 +65,7 @@ body {
   font-family: "Monoton", cursive;
   text-align: center;
   font-size: 30px;
+  
 }
 
 .logo:hover {
@@ -117,9 +119,14 @@ body {
 .nav-bar-right p:hover {
   cursor: pointer;
   color: red;
+  
 }
 
 /* Home */
+
+.home{
+  margin-bottom: 50px;
+}
 
 .home video {
   width: 100vw;
@@ -134,6 +141,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  
 }
 .movie img {
   width: 300px;
@@ -247,24 +255,21 @@ body {
   margin: -130px 0px 0 690px;
   font-size: 30px;
   font-family: "Monoton", cursive;
+  
 }
 
 .movies-container {
   width: 98vw;
   height: 500px;
   margin-left: 6.5px;
+  margin-top: 50px;
 }
 
 /* Movie cart */
 .movie-cart {
-  
-  border: black 1px solid;
-  width: 300px;
+  width: 288.7px;
   height: 150px;
   display: flex;
-  flex-direction: column;
-  color: white;
-  justify-content: space-between;
   color: white;
   font-size: 10px;
   align-items: center;
@@ -274,20 +279,25 @@ body {
 }
 
 .movie-cart:hover{
+  transform: scale(1.4);
   filter: grayscale(0%);
   opacity: 1;
   cursor: pointer;
+  z-index: 1;
 }
 
+
+
+
 .movie-cart img {
-  height: 150px;
-  width: 300px;
+  height: 100%;
+  width: 100%;
 }
 
 
 .button-start{
   position: absolute;
-  margin-top: 55px;
+  margin-left: 120px ;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -299,5 +309,12 @@ body {
   font-size: 25px;
   color: rgba(0, 0, 0, 0.829);
   background-color: rgba(255, 255, 255, 0.838);
+}
+
+.movie-section{
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  
 }
 
