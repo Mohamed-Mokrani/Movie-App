@@ -14,13 +14,14 @@ const MovieCart = () => {
 
   const handleMovieHover = (index) => setHoverIndex(index);
   const handleMovieLeave = () => setHoverIndex(null);
-
+  
   return (
+    <div className='movies-container'>
     <div className="movie-section">
-      {movies.map((movie, index) => (
+      {movies.map((movies, index) => (
         <div key={index} className="movie-cart">
           <img
-            src={movie}
+            src={movies}
             alt="Movie name"
             onMouseEnter={() => handleMovieHover(index)}
             onMouseLeave={handleMovieLeave}
@@ -32,6 +33,7 @@ const MovieCart = () => {
           )}
         </div>
       ))}
+    </div>
     </div>
   );
 };
