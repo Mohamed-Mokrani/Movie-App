@@ -11,7 +11,7 @@ const MovieCart = ({movies}) => {
       {movies.map((movies, index) => (
         <div key={index} className="movie-cart">
           <img
-            src={movies}
+            src={movies.image}
             alt="Movie name"
             onMouseEnter={() => handleMovieHover(index)}
             onMouseLeave={handleMovieLeave}

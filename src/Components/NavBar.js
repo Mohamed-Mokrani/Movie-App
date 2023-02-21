@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 
-const NavBar = ({setNewMovieImage,moviesUpdate,newMovieImage,setNewMovieName,newMovieName}) => {
+const NavBar = ({ name, setName, image, setImage, moviesUpdate }) => {
   const [showInput, setShowInput] = useState(false);
   const [movieSearch, setMovieSearch] = useState("");
   const [navBarBackgroundColor, setNavBarBackgroundColor] = useState("");
   const [addMovie, setAddMovie] = useState(false);
-  
- 
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
@@ -14,12 +12,15 @@ const NavBar = ({setNewMovieImage,moviesUpdate,newMovieImage,setNewMovieName,new
   };
 
   const addMovieClick = () => setAddMovie(true);
-  const cancelMovie = () =>{ setAddMovie(false); setNewMovieName(""); setNewMovieImage("")}
+  const cancelMovie = () => {
+    setAddMovie(false);
+    setName("");
+    setImage("");
+  };
   const inputClick = () => setShowInput(true);
   const inputMouseLeave = () => {
     setMovieSearch("");
     setShowInput(false);
-    
   };
 
   useEffect(() => {
@@ -57,25 +58,35 @@ const NavBar = ({setNewMovieImage,moviesUpdate,newMovieImage,setNewMovieName,new
         <p>About Us</p>
         <p>Contact</p>
         <p>Partners</p>
-        <p onMouseEnter={addMovieClick} >
+        <p onMouseEnter={addMovieClick}>
           <i class="fa-solid fa-plus"></i>
         </p>
         {addMovie ? (
           <div class="add-movie" onMouseLeave={cancelMovie}>
             <form className="form">
               <div>
-                <input type="text" placeholder="Put the movie's NAME" value={newMovieName} onChange={(e)=>setNewMovieName(e.target.value)}/>
+                <input
+                  type="text"
+                  placeholder="Put the movie's NAME"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
                 <i class="fa-solid fa-heading addmovie-logo"></i>
               </div>
               <div>
-              <input type="text" placeholder="Put the movie's IMAGE" value={newMovieImage} onChange={(e) => setNewMovieImage(e.target.value)} />
+                <input
+                  type="text"
+                  placeholder="Put the movie's IMAGE"
+                  value={image}
+                  onChange={(e) => setImage(e.target.value)}
+                />
                 <i class="fa-solid fa-image addmovie-logo"></i>
               </div>
-              
+
               <div className="add-movies-buttons">
                 <button type="button" onClick={moviesUpdate}>
                   {""}
-                  <i class="fa-solid fa-plus" ></i> Add movie
+                  <i class="fa-solid fa-plus"></i> Add movie
                 </button>
                 <button type="reset">
                   <i class="fa-solid fa-xmark"></i>Reset
