@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
-const NavBar = ({ name, setName, image, setImage, moviesUpdate }) => {
+const NavBar = ({ name, setName, image, setImage, moviesUpdate,movieSearch,setMovieSearch }) => {
   const [showInput, setShowInput] = useState(false);
-  const [movieSearch, setMovieSearch] = useState("");
+  
   const [navBarBackgroundColor, setNavBarBackgroundColor] = useState("");
   const [addMovie, setAddMovie] = useState(false);
 
@@ -14,12 +14,11 @@ const NavBar = ({ name, setName, image, setImage, moviesUpdate }) => {
   const addMovieClick = () => setAddMovie(true);
   const cancelMovie = () => {
     setAddMovie(false);
-    setName("");
-    setImage("");
+   
   };
   const inputClick = () => setShowInput(true);
   const inputMouseLeave = () => {
-    setMovieSearch("");
+   
     setShowInput(false);
   };
 
@@ -48,6 +47,7 @@ const NavBar = ({ name, setName, image, setImage, moviesUpdate }) => {
               className="search-input"
               type="text"
               placeholder="Search for a Movie?"
+              value={movieSearch}
               onChange={(e) => setMovieSearch(e.target.value)}
             />
           ) : (

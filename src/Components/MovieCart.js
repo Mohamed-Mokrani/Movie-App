@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const MovieCart = ({movies}) => {
+const MovieCart = ({movies,movieSearch}) => {
   const [hoverIndex, setHoverIndex] = useState("");
   const handleMovieHover = (index) => setHoverIndex(index);
   const handleMovieLeave = () => setHoverIndex(null);
@@ -8,7 +8,14 @@ const MovieCart = ({movies}) => {
   return (
     <div className='movies-container'>
     <div className="movie-section">
-      {movies.map((movies, index) => (
+      
+      {movies
+
+      .filter(
+        (el)=>el.name.toLowerCase().includes(movieSearch.toLowerCase())
+      )
+      
+      .map((movies, index) => (
         <div key={index} className="movie-cart">
           <img
             src={movies.image}

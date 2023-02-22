@@ -5,6 +5,7 @@ import MovieCart from "./Components/MovieCart";
 import { useState } from "react";
 
 function App() {
+  
   const [movies, setMovies] = useState([
     {
       name: "you",
@@ -17,7 +18,7 @@ function App() {
         "https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/4909/474909-h",
     },
     {
-      name: "356 days",
+      name: "365 days",
       image:
         "https://www.zikoko.com/wp-content/uploads/zikoko/2022/04/image-86-1024x576.jpg",
     },
@@ -38,6 +39,8 @@ function App() {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
 
+  const [movieSearch, setMovieSearch] = useState("");
+
   const moviesUpdate = () => {
     setMovies([...movies, { name, image }]);
     setName("");
@@ -52,10 +55,12 @@ function App() {
         image={image}
         setImage={setImage}
         moviesUpdate={moviesUpdate}
+        movieSearch={movieSearch}
+        setMovieSearch={setMovieSearch}
       />
       <Home />
       <h1 className="movies-title">MOVIES</h1>
-      <MovieCart movies={movies} />
+      <MovieCart movies={movies} movieSearch={movieSearch}/>
     </div>
   );
 }
