@@ -3,9 +3,10 @@ import NavBar from "./Components/NavBar";
 import Home from "./Components/Home";
 import MovieCart from "./Components/MovieCart";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import MovieDesc from "./Components/MovieDesc";
 
 function App() {
-  
   const [movies, setMovies] = useState([
     {
       name: "you",
@@ -60,7 +61,12 @@ function App() {
       />
       <Home />
       <h1 className="movies-title">MOVIES</h1>
-      <MovieCart movies={movies} movieSearch={movieSearch}/>
+      <MovieCart movies={movies} movieSearch={movieSearch} />
+
+      <Routes>
+        <Route path="/MovieDesc" element={<MovieDesc />} />
+        
+      </Routes>
     </div>
   );
 }

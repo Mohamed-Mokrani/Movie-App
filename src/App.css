@@ -7,7 +7,6 @@
   50% {
     color: red;
     letter-spacing: 3px;
-    
   }
   100% {
     color: white;
@@ -65,7 +64,6 @@ body {
   font-family: "Monoton", cursive;
   text-align: center;
   font-size: 30px;
-  
 }
 
 .logo:hover {
@@ -79,7 +77,6 @@ body {
   gap: 5px;
   gap: 0px;
   position: relative;
-  transition: 5000ms;
 }
 
 .search-button {
@@ -119,12 +116,11 @@ body {
 .nav-bar-right p:hover {
   cursor: pointer;
   color: red;
-  
 }
 
 /* Home */
 
-.home{
+.home {
   margin-bottom: 50px;
 }
 
@@ -141,7 +137,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  
 }
 .movie img {
   width: 300px;
@@ -255,7 +250,6 @@ body {
   margin: -130px 0px 0 690px;
   font-size: 30px;
   font-family: "Monoton", cursive;
-  
 }
 
 .movies-container {
@@ -278,7 +272,7 @@ body {
   filter: grayscale(60%);
 }
 
-.movie-cart:hover{
+.movie-cart:hover {
   transform: scale(1.4);
   filter: grayscale(0%);
   opacity: 1;
@@ -286,18 +280,14 @@ body {
   z-index: 1;
 }
 
-
-
-
 .movie-cart img {
   height: 100%;
   width: 100%;
 }
 
-
-.button-start{
+.button-start {
   position: absolute;
-  margin-left: 120px ;
+  margin-left: 120px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -311,9 +301,40 @@ body {
   background-color: rgba(255, 255, 255, 0.838);
 }
 
-.movie-section{
+.movie-section {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+}
+
+.Movie-desc {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.938);
+  border: 0.1px solid rgba(255, 255, 255, 0.307);
+  width: 800px;
+  height: 600px;
+  left: 25%;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+
+.Movie-desc video {
+  width: 790px;
+}
+
+.Movie-desc Button {
+  background-color: transparent;
+  border: solid 1px red;
+  color: red;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  position: absolute;
+  right: 3px;
+  top: 3px;
   
 }

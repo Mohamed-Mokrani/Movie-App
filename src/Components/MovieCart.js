@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const MovieCart = ({movies,movieSearch}) => {
   const [hoverIndex, setHoverIndex] = useState("");
@@ -16,6 +17,7 @@ const MovieCart = ({movies,movieSearch}) => {
       )
       
       .map((movies, index) => (
+        <Link to="/MovieDesc">
         <div key={index} className="movie-cart">
           <img
             src={movies.image}
@@ -29,6 +31,7 @@ const MovieCart = ({movies,movieSearch}) => {
             </button>
           )}
         </div>
+        </Link>
       ))}
     </div>
     </div>
