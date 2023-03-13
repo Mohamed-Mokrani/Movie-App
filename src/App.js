@@ -59,13 +59,15 @@ function App() {
         movieSearch={movieSearch}
         setMovieSearch={setMovieSearch}
       />
+      
+      
+
       <Home />
       <h1 className="movies-title">MOVIES</h1>
       <MovieCart movies={movies} movieSearch={movieSearch} />
 
       <Routes>
         <Route path="/MovieDesc" element={<MovieDesc />} />
-        
       </Routes>
     </div>
   );

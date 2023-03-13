@@ -268,8 +268,8 @@ body {
   font-size: 10px;
   align-items: center;
   opacity: 0.8;
-  transition: 500ms;
-  filter: grayscale(60%);
+  transition:500ms;
+  filter: grayscale(80%);
 }
 
 .movie-cart:hover {
@@ -277,12 +277,16 @@ body {
   filter: grayscale(0%);
   opacity: 1;
   cursor: pointer;
-  z-index: 1;
+  
 }
 
 .movie-cart img {
   height: 100%;
   width: 100%;
+}
+
+.movie-hover:hover{
+  z-index: 1;
 }
 
 .button-start {
@@ -320,6 +324,7 @@ body {
   justify-content: space-around;
   align-items: center;
   color: white;
+  z-index: 2;
 }
 
 .Movie-desc video {
@@ -336,5 +341,4 @@ body {
   position: absolute;
   right: 3px;
   top: 3px;
-  
 }

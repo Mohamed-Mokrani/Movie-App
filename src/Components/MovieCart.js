@@ -17,7 +17,7 @@ const MovieCart = ({movies,movieSearch}) => {
       )
       
       .map((movies, index) => (
-        <Link to="/MovieDesc">
+        <Link to ="/MovieDesc" className="movie-hover">
         <div key={index} className="movie-cart">
           <img
             src={movies.image}
